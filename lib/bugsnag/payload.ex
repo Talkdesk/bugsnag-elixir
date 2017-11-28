@@ -26,7 +26,7 @@ defmodule Bugsnag.Payload do
       |> add_context(Keyword.get(options, :context))
       |> add_user(Keyword.get(options, :user))
       |> add_metadata(Keyword.get(options, :metadata))
-      |> add_release_stage(Keyword.get(options, :release_stage, to_string Mix.env))
+      |> add_release_stage(Keyword.get(options, :release_stage))
 
     Map.put payload, :events, [event]
   end
